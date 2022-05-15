@@ -12,8 +12,8 @@ export async function before(m, { isAdmin, isBotAdmin }) {
             const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
             if (m.text.includes(linkThisGroup)) return !0
         }
-        await conn.sendButton(m.chat, `*▢ Enlace de grupo detectado* ${isBotAdmin ? '' : '\n\nNo soy admin así que no te puedo expulsar :"v'}`, '© FG98 - DyLux', ['Desactivar AntiLink', '/disable antilink'], m)
-        if (isBotAdmin && bot.restrict) {
+        await conn.sendButton(m.chat, `*▢ Enlace de grupo detectado😏* ${isBotAdmin ? '' : '\n\nNo soy admin así que no te puedo expulsar :"v'}`, '© FG98 - DyLux', ['Desactivar AntiLink', '/disable antilink'], m)
+        if (isBotAdmin && bot.restrict) {2
             await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         } else if (!bot.restrict) return m.reply('Owner deshabitar kick automático')
     }
